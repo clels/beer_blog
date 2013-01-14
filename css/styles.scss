@@ -1,0 +1,246 @@
+---
+run: ScssConverter
+---
+
+$gold: #ae8e1b;
+$text_dark: #383636;
+$text_light: #626364;
+$dark_grey:#d2d4d5;
+$light_grey:#f2f2f3;
+$highlight:#f6f7f7;
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a{
+	color:$gold;
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+.aPost{
+	padding:20px;
+	position:relative;
+	
+	.post_image{
+		float:left;
+		width:50%;
+	}
+	.post_stats{
+		float:left;
+		width:50%;
+		padding-left:20px;
+		
+		.post_ratings{
+			p{
+				display:inline;
+				font-size:2rem;
+			}
+			img{
+				display:inline;
+				height:2rem;
+			}
+		}
+		.statsRow{
+			padding:10px 0 0;
+			h3{
+				display:inline;
+			}
+			p{
+				display:inline;
+			}
+		}
+	}
+	.post_body{
+		background:$highlight;
+		margin:20px auto 0;
+		padding:20px;
+		-moz-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+		-webkit-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+		-o-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+		box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+		border-radius:5px;
+		
+		p{
+			text-indent:1.5rem;
+			margin-top:10px;
+		}
+		p.noIndent{
+			text-indent:0 !important;
+		}
+	}
+	.post_tags{
+		padding-top:20px;
+		
+		p{
+			display:inline;
+		}
+		a{
+			display:inline;
+		}
+	}
+}
+
+body,p,h1,h2,h3,ul{
+	padding:0;
+	margin:0;
+}
+
+body{
+  	background:$dark_grey;
+  	color:$text_dark;
+  	font-size:16px;
+	font-family:'Lato',sans-serif;
+}
+
+.clear{
+	clear:both;
+}
+
+div[role="main"]{
+	width:100%;
+	position:relative;
+}
+
+div[role="container"]{
+	position:relative;
+	margin:auto;
+	max-width:990px;
+	min-width:800px;
+}
+
+div[role="content"]{
+	background:$light_grey;
+	float:left;
+	width:80%;
+	
+	-moz-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+	-webkit-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+	-o-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+	box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+	border-radius:5px;
+}
+
+div[role="sidebar"]{
+	float:left;
+	width:20%;
+	padding-left:15px;
+}
+
+.footer{
+	padding:10px 20px;
+}
+
+.header{
+	padding:15px 0;
+	background:url(/images/highlight.png) no-repeat;
+	
+	.logo{
+		width:100px;
+		float:left;
+	}
+	h1{
+		color:$gold;
+		font-size:50px;
+		padding-top:5px;
+		padding-left:15px;
+		text-shadow:rgba(0,0,0,0.5) 0px 1px 1px;
+	}
+	p{
+		font-size:20px;
+		padding-left:20px;
+	}
+}
+
+h1{
+	color:$text_dark;
+	font-size:2.2rem;
+}
+
+h2{
+	color:$text_light;
+	font-size:1.5rem;
+}
+
+hr{
+	margin:20px 0;
+}
+
+p{
+	color:$text_light;
+	line-height:150%;
+	font-size:1rem;
+}
+
+.rating{
+	float:right;
+	position:absolute;
+	top:37px;
+	right:15px;
+	width:30%;
+	
+	p{
+		float:right;
+	}
+	img{
+		float:right;
+		height:1.3rem;
+	}
+}
+
+ul[role="posts"]{
+	margin:0;
+	padding:0;
+	
+	li{
+		list-style:none;
+		border-bottom:1px solid $dark_grey;
+		padding:25px 15px;
+		position:relative;
+		
+		img.post_image{
+			float:left;
+			width:20%;
+			margin-right:15px;
+		}
+		.postHolder{
+			float:left;
+			width:77%;
+			position:relative;
+			
+			.postBlurb{
+				margin-top:10px;
+			}
+			.postFooter{
+				margin-top:10px;
+
+				.tags{
+					float:left;
+					width:70%;
+
+					p{
+						display:inline;
+					}
+				}
+				.postedDate{
+					float:right;
+					width:30%;
+					text-align:right;
+				}
+			}
+		}
+	}
+	li:hover{
+		background:$highlight;
+		
+		h1{
+			color:$gold;
+		}
+	}
+}

@@ -1,0 +1,66 @@
+{% if post.rating == 5 %}
+	<div class="rating">
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<p>Rated: </p>
+	</div>
+{% endif %}
+
+{% if post.rating == 4 %}
+	<div class="rating">
+		
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<p>Rated: </p>
+	</div>
+{% endif %}
+
+{% if post.rating == 3 %}
+  <div class="rating">
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<p>Rated: </p>
+  </div>
+{% endif %}
+
+{% if post.rating == 2 %}
+  <div class="rating">
+  		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<p>Rated: </p>
+  </div>
+{% endif %}
+
+{% if post.rating == 1 %}
+  <div class="rating">
+  		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_on.png" />
+		<p>Rated: </p>
+  </div>
+{% endif %}
+
+{% if post.rating == 0 %}
+	<div class="rating">
+  		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<img src="/images/rated_off.png" />
+		<p>Rated: </p>
+  	</div>
+{% endif %}

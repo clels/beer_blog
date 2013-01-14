@@ -1,0 +1,60 @@
+.post_ratings
+	{% if page.rating == 5 %}
+	.post_ratings
+		%p Rated:
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+	{% endif %}
+
+	{% if page.rating == 4 %}
+	.post_ratings
+		%p Rated:
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_off.png"}
+	{% endif %}
+
+	{% if page.rating == 3 %}
+	.post_ratings
+		%p Rated:
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+	{% endif %}
+
+	{% if page.rating == 2 %}
+	.post_ratings
+		%p Rated:
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+	{% endif %}
+
+	{% if page.rating == 1 %}
+	.post_ratings
+		%p Rated:
+		%img{:src => "/images/rated_on.png"}
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+	{% endif %}
+
+	{% if page.rating == 0 %}
+	.post_ratings
+		%p Rated:
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+		%img{:src => "/images/rated_off.png"}
+	{% endif %}

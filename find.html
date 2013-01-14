@@ -3,6 +3,11 @@ layout: default
 ---
 <ul role="posts">
 	{% for post in site.posts %}
+			
+		{% for tag in post.tags[:params[:tag]] %}
+			Yay
+		{% endfor %}
+		{{:params[:tag]}}
 		<li>
 			{% include ratings.html %}
 			<a href="{{ post.url }}">
@@ -29,5 +34,6 @@ layout: default
 			</div>
 			<div class="clear"></div>
 		</li>
+		
 	{% endfor %}
 </ul>
