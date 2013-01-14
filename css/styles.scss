@@ -119,6 +119,8 @@ div[role="content"]{
 	background:$light_grey;
 	float:left;
 	width:80%;
+	position:relative;
+	z-index:3;
 	
 	-moz-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
 	-webkit-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
@@ -128,9 +130,20 @@ div[role="content"]{
 }
 
 div[role="sidebar"]{
+	background:$light_grey;
 	float:left;
 	width:20%;
-	padding-left:15px;
+	padding:15px;
+	margin-top:40px;
+	position:relative;
+	z-index:1;
+	margin-left:-1px;
+	
+	-moz-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+	-webkit-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+	-o-box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+	box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+	border-radius:0px 5px 5px 0px;
 }
 
 .footer{
@@ -226,6 +239,32 @@ ul[role="posts"]{
 
 					p{
 						display:inline;
+					}
+					a{
+						position:relative;
+					}
+					a:hover{
+						background:$light_grey;
+						z-index:7;
+						
+						border-radius:5px 0px 0px 5px;
+					}
+					a:hover:after{
+						content: attr(data-blurb);
+						position:absolute;
+						background:$light_grey;
+						padding:20px;
+						width:auto;
+						margin-top:-18px;
+						color:$text_light;
+						z-index:6;
+						width:250px;
+						
+						-moz-box-shadow: rgba(0,0,0,0.3) 0 0 10px;
+						-webkit-box-shadow: rgba(0,0,0,0.3) 0 0 10px;
+						-o-box-shadow: rgba(0,0,0,0.3) 0 0 10px;
+						box-shadow: rgba(0,0,0,0.3) 0 0 10px;
+						border-radius:5px;
 					}
 				}
 				.postedDate{

@@ -20,7 +20,7 @@
 				{{ content }}
 			</div>
 			<div role="sidebar">
-				<h3>Top Beers</h3>
+				<h3>Top 5 Beers</h3>
 				<ol>
 					<li>Beer 1</li>
 					<li>Beer 2</li>
@@ -29,18 +29,12 @@
 					<li>Beer 5</li>
 				</ol>
 				
-				<h3>Archived</h3>
-				<a href>
-					May
-				</a>
-				<br>
-				<a href>
-					June
-				</a>
-				<br>
-				<a href>
-					July
-				</a>
+				<h3>Slayed Beers</h3>
+				{% for post in site.posts %}
+					<a href="{{ post.url }}">
+						{{ post.title }}<br/>
+					</a>
+				{% endfor %}
 				
 			</div>
 			<div class="clear"></div>

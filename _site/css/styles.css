@@ -80,6 +80,8 @@ div[role="content"] {
   background: #f2f2f3;
   float: left;
   width: 80%;
+  position: relative;
+  z-index: 3;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
   -o-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
@@ -87,9 +89,19 @@ div[role="content"] {
   border-radius: 5px; }
 
 div[role="sidebar"] {
+  background: #f2f2f3;
   float: left;
   width: 20%;
-  padding-left: 15px; }
+  padding: 15px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+  margin-left: -1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
+  border-radius: 0px 5px 5px 0px; }
 
 .footer {
   padding: 10px 20px; }
@@ -163,6 +175,27 @@ ul[role="posts"] {
           width: 70%; }
           ul[role="posts"] li .postHolder .postFooter .tags p {
             display: inline; }
+          ul[role="posts"] li .postHolder .postFooter .tags a {
+            position: relative; }
+          ul[role="posts"] li .postHolder .postFooter .tags a:hover {
+            background: #f2f2f3;
+            z-index: 7;
+            border-radius: 5px 0px 0px 5px; }
+          ul[role="posts"] li .postHolder .postFooter .tags a:hover:after {
+            content: attr(data-blurb);
+            position: absolute;
+            background: #f2f2f3;
+            padding: 20px;
+            width: auto;
+            margin-top: -18px;
+            color: #626364;
+            z-index: 6;
+            width: 250px;
+            -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
+            -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
+            -o-box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
+            border-radius: 5px; }
         ul[role="posts"] li .postHolder .postFooter .postedDate {
           float: right;
           width: 30%;
