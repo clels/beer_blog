@@ -47,9 +47,9 @@ beer_type:
 	
 	%p
 
-.post_tags
-	%p Tags: 
+.tags
+	Tags: 
 	{% for tag in page.tags %}
-	%a{:href => "/find.html?{{tag}}"}
+	%a{:id => "tag", :data => ""}
 		{{tag}}
 	{% endfor %}

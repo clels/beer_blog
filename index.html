@@ -14,10 +14,10 @@ layout: default
 				</a>	
 				<p class="postBlurb">{{ post.blurb }}</p>
 				<div class="postFooter">
-					<div class="tags">
+					<div class="tags" id="tags">
 						<p>Tags : </p>	
 						{% for tag in post.tags %}
-							<a data-blurb="This is a strong brew from the earliest of times, guarenteed to keep the grumpiest of men in somewhat of good moods.">
+							<a data="" id="tag">
 								{{tag}}
 							</a>
 						{% endfor %}

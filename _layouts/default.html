@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset=utf-8 />
-  <title> Beer Slayer Blog </title>
-  <link rel="stylesheet" href="/css/styles.css" />
+  	<meta charset=utf-8 />
+	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+  	<title> Beer Slayer Blog </title>
+  	<link rel="stylesheet" href="/css/styles.css" />
+	<link rel="stylesheet" href="/css/styles.css" />
+	<script type="text/javascript" charset="utf-8" src="/javascript/jQuery.js" ></script>	
+	<script type="text/javascript" charset="utf-8" src="/javascript/site.js" ></script>	
+	<script type="text/javascript" charset="utf-8" src="/javascript/tag_hover.js"></script>		
 </head>
 <body>
 	<div role="main">
@@ -14,32 +19,41 @@
 				</a>
 				<h1>Beer Slayer</h1>
 				<p>Blogging about beer...</p>
+				<img src="/images/menu.png" class="mobileMenu" id="menu"/>
 				<div class="clear"></div>
 			</div>
-			<div role="content">
+			<div role="content" id="content">
 				{{ content }}
 			</div>
-			<div role="sidebar">
-				<h3>Top 5 Beers</h3>
-				<ol>
-					<li>Beer 1</li>
-					<li>Beer 2</li>
-					<li>Beer 3</li>
-					<li>Beer 4</li>
-					<li>Beer 5</li>
-				</ol>
-				
-				<h3>Slayed Beers</h3>
-				{% for post in site.posts %}
-					<a href="{{ post.url }}">
-						{{ post.title }}<br/>
-					</a>
-				{% endfor %}
-				
+			<div role="sidebar" id="sidebar">
+				<div>
+					<h3>Top 5 Beers</h3>
+					<ol>
+						<li><a href="#">Beer 1</a></li>
+						<li><a href="#">Beer 1</a></li>
+						<li><a href="#">Beer 1</a></li>
+						<li><a href="#">Beer 1</a></li>
+						<li><a href="#">Beer 1</a></li>
+					</ol>
+				</div>
+				<div>
+					<h3>Slayed Beers</h3>
+					<ul>
+					{% for post in site.posts %}
+						<a href="{{ post.url }}">
+							<li>
+							{% for beer_name in post.beer_name %}
+								{{ beer_name }}<br/>
+							{% endfor %}
+							</li>
+						</a>
+					{% endfor %}
+					</ul>
+				</div>
 			</div>
 			<div class="clear"></div>
 			<div class="footer">
-				site generated with <a href="http://jekyllrb.com/">jekyll</a>
+				site generated with <a href="http://jekyllrb.com/">jekyll</a> put together by <a href="http://clillq.com">Chad Lillquist</a>
 			</div>
 		</div>
 	</div>
