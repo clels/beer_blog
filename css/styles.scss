@@ -411,11 +411,19 @@ ul[role="posts"]{
 		}
 	}
 	li:hover{
+	}
+	li:hover{
 		background:$highlight;
 		
 		h1{
 			color:$gold;
 		}
+	}
+	li:last-child{
+		border-radius:0 0 5px 5px;
+	}
+	li:first-child{
+		border-radius:5px 5px 0 0;
 	}
 }
 
