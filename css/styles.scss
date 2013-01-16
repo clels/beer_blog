@@ -91,7 +91,6 @@ a:hover{
 	}
 	.tags{
 		padding:20px 0 0;
-		text-align: justify;
 	}
 	
 	@media screen and (max-width: 800px) {
@@ -176,7 +175,7 @@ div[role="sidebar"]{
 	float:left;
 	width:20%;
 	padding:15px;
-	margin-top:40px;
+	margin-top:20px;
 	z-index:1;
 	margin-left:-1px;
 	right:0;
@@ -382,7 +381,6 @@ ul[role="posts"]{
 				.tags{
 					float:left;
 					width:70%;
-					text-align: justify;
 
 					p{
 						display:inline;

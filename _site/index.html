@@ -23,7 +23,55 @@
 				<div class="clear"></div>
 			</div>
 			<div role="content" id="content">
-				{{ content }}
+				<ul role="posts">
+	
+		<li>
+			
+	<div class="rating">
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<img src="/images/rated_on.png" />
+		<p>Rated: </p>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+			<a href="/BeerSlayer_Init.html">
+		  		<img src="/images/chad_thumb.jpg" class="post_image"/>
+			</a>
+			<div class="postHolder">
+				<a href="/BeerSlayer_Init.html">
+					<h1>Beer Slayers Init!</h1>
+				</a>	
+				<p class="postBlurb">Sadly not reporting a slain, but to introducing myself.  Im Chad Lillquist and I have been known as beer slayer :)</p>
+				<div class="postFooter">
+					<div class="tags" id="tags">
+						<p>Tags : </p>	
+						
+							<a data="" id="tag">
+								Beer
+							</a>
+						
+					</div>
+					<div class="postedDate">
+						<p>Posted: 15 Jan 2013</p>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</li>
+	
+</ul>
 			</div>
 			<div role="sidebar" id="sidebar">
 				<div>
@@ -35,15 +83,15 @@
 				<div>
 					<h3>Slain Beers</h3>
 					<ul>
-					{% for post in site.posts %}
-						<a href="{{ post.url }}">
+					
+						<a href="/BeerSlayer_Init.html">
 							<li>
-							{% for beer_name in post.beer_name %}
-								{{ beer_name }}<br/>
-							{% endfor %}
+							
+								Not A Beer.. Chad<br/>
+							
 							</li>
 						</a>
-					{% endfor %}
+					
 					</ul>
 				</div>
 			</div>

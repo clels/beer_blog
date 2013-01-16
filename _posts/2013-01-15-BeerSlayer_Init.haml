@@ -1,0 +1,71 @@
+---
+layout: post
+run: HamlConverter
+
+image: chad.jpg
+thumb: chad_thumb.jpg
+
+author: Chad Lillquist
+title: Beer Slayers Init!
+sub_title: A Beer Slayer's first post
+blurb: Sadly not reporting a slain, but to introducing myself.  Im Chad Lillquist and I have been known as beer slayer :)
+
+tags: ["Beer"]
+rating: 5
+
+brewery: 
+beer_name: Not A Beer.. Chad
+beer_abv: 
+beer_ibus: 
+beer_type: 
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p 
+		%b Why am I doing this, I'll tell you why I'm doing this... 
+		I'm doing this, well... just because.  The two real main reasons are: 1. For the love of beer, to see a visual documentation of beers I've had.  And 2. I am web nerd and wanted to play around with a new web technology, at least I think it can be called a technology.  That technology is 
+		%a{:href => "http://jekyllrb.com/"}
+			Jekyll.
+	
+	%p 
+		%b Where did the name come from?  
+		I pulled it from a Canadian tv show, The show was 'Trailer Park Boys'.  In that show there are two characters, Corey and Trevor, they are stupid as fuck. Oh, yeah, I should mention, I may swear in my posts.  Corey and Trevor are stupid as fuck, In one episode, Corey had on a t-shirt that said Beer Slayer.  I though it was a cool title.  One who slays beers. :)
+	
+	%p 
+		%b Whats going to be posted here? 
+		Well its going to be simple, if I want to log one of my slain beers, I will post it to this site, with some data and picture, also writing a little about it.  Should be fun, light, good for recommendations, or just reading my Blah Blahs.
+	
+	%p 
+		%b The Technology? 
+		Jekyll seemed cool and I wanted to give it a whirl, Jekyll is a static site generator that will help automate some of the processes that would get with a web framework but while not being web framework.  Seemed interesting, and this is my project to play around with it.  Should be fun.  It was pretty simple to get running, and will probably use it again for another website.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => ""}
+		{{tag}}
+	{% endfor %}
