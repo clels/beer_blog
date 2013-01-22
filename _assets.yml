@@ -2,7 +2,8 @@ javascript_compressor: closure
 
 javascripts:
   application:
-    - _site/js/site.js
+    - _site/javascript/site.js
+    - _site/javascript/tag_hover.js
 stylesheets:
   screen:
     - _site/css/styles.css
