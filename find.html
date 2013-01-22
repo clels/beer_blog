@@ -11,7 +11,7 @@ layout: default
 		
 		var param = window.location.search.replace( "?", "" );
 		var split = param.split("=");
-		var value = escape(split[1]);
+		var value = split[1];
 		var $results = $("#results");
 		
 		$.getJSON('posts.json', function(data) {
