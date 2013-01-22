@@ -2,10 +2,10 @@
 <html>
 <head>
   	<meta charset=utf-8 />
-	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport" />
   	<title> Beer Slayers Blog </title>
+	<link rel="icon" type="image/ico" href="favicon.ico">
   	<link rel="stylesheet" href="/css/styles.css" />
-	<link rel="stylesheet" href="/css/styles.css" />
 	<script type="text/javascript" charset="utf-8" src="/javascript/jQuery.js" ></script>	
 	<script type="text/javascript" charset="utf-8" src="/javascript/site.js" ></script>	
 	<script type="text/javascript" charset="utf-8" src="/javascript/tag_hover.js"></script>		
@@ -35,21 +35,22 @@
 				<div>
 					<h3>Slain Beers</h3>
 					<ul>
-					{% for post in site.posts %}
+					{% for post in site.posts limit:20 %}
 						<a href="{{ post.url }}">
 							<li>
-							{% for beer_name in post.beer_name %}
-								{{ beer_name }}<br/>
-							{% endfor %}
+								{{ post.beer_name }}
 							</li>
 						</a>
 					{% endfor %}
+					<a href="all.html">
+						<li>View All Beers</li>
+					</a>
 					</ul>
 				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="footer">
-				site generated with <a href="http://jekyllrb.com/">jekyll</a> put together by <a href="http://clillq.com">Chad Lillquist</a>
+			<div class="footer" id="footer">
+				Powered by <a href="http://jekyllrb.com/">jekyll</a> and  put together by <a href="http://clillq.com">Chad Lillquist</a>
 			</div>
 		</div>
 	</div>

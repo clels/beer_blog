@@ -2,10 +2,10 @@
 <html>
 <head>
   	<meta charset=utf-8 />
-	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-  	<title> Beer Slayer Blog </title>
+	<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport" />
+  	<title> Beer Slayers Blog </title>
+	<link rel="icon" type="image/ico" href="favicon.ico">
   	<link rel="stylesheet" href="/css/styles.css" />
-	<link rel="stylesheet" href="/css/styles.css" />
 	<script type="text/javascript" charset="utf-8" src="/javascript/jQuery.js" ></script>	
 	<script type="text/javascript" charset="utf-8" src="/javascript/site.js" ></script>	
 	<script type="text/javascript" charset="utf-8" src="/javascript/tag_hover.js"></script>		
@@ -17,65 +17,69 @@
 				<a href="/">
 					<img src="/images/logo.png" class="logo" alt="Beer Slayers Blog" />
 				</a>
-				<h1>Beer Slayer</h1>
+				<h1>Beer Slayers</h1>
 				<p>Blogging about beer...</p>
 				<img src="/images/menu.png" class="mobileMenu" id="menu"/>
 				<div class="clear"></div>
 			</div>
 			<div role="content" id="content">
-				<ul role="posts">
-	
-			
-		
-		
-		<li>
-			
-	<div class="rating">
-		<img src="/images/rated_on.png" />
-		<img src="/images/rated_on.png" />
-		<img src="/images/rated_on.png" />
-		<img src="/images/rated_on.png" />
-		<img src="/images/rated_on.png" />
-		<p>Rated: </p>
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-			<a href="/BeerSlayer_Init.html">
-		  		<img src="/images/chad_thumb.jpg" class="post_image"/>
-			</a>
-			<div class="postHolder">
-				<a href="/BeerSlayer_Init.html">
-					<h1>Beer Slayers Init!</h1>
-				</a>	
-				<p class="postBlurb">Sadly not reporting a slain, but to introducing myself.  Im Chad Lillquist and I have been known as beer slayer :)</p>
-				<div class="postFooter">
-					<div class="tags">
-						<p>Tags : </p>	
-						
-							<a href="/find.html?tag=Beer">
-								Beer
-							</a>
-						
-					</div>
-					<div class="postedDate">
-						<p>Posted: 15 Jan 2013</p>
-					</div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</li>
-		
-	
+				<ul role="posts" id="results">
+	Loading results...
 </ul>
+
+<script type="text/javascript" charset="utf-8">
+
+	$(document).ready(function() {
+		
+		var param = window.location.search.replace( "?", "" );
+		var split = param.split("=");
+		var value = escape(split[1]);
+		var $results = $("#results");
+		
+		$.getJSON('posts.json', function(data) {
+			var theJSON = data;
+			var posts = filterResults(theJSON, value);
+			if (posts.length === 0) {
+				noResults();
+	 		} else {
+				foundSomething(posts);
+			}
+		});
+		
+		function noResults() {
+			$results.html("");
+			var theHTML = "<li><h2>Sorry, I did not find anything for: "+ value +"</h2></li>";
+			$results.append(theHTML);
+		};
+		
+		function foundSomething(posts) {
+			$results.html("");
+			$results.append("<li><h2>Results for: "+ value +"</h2></li>");
+			$.each(posts, function(i, v) {
+				var theHTML = "<li><a href=\""+ posts[i].href +"\"><img src=\"/images/"+ posts[i].thumb +"\" class=\"post_image\"/></a><a href=\""+ posts[i].href +"\"><h1>"+ posts[i].title +"</h1></a><p>"+ posts[i].blurb +"</p><div class=\"clear\"></div></li>";
+				$results.append(theHTML);
+			});
+		};
+		
+		var filterResults = function(posts, value) {
+			var filteredPosts = [];
+			$.each(posts, function(i, v) {
+				$.each(v, function(index, item) {
+					if(item.indexOf(value) != -1 && value.length != 0){
+						if($.inArray(v, filteredPosts) != -1){
+							return;
+						}else{
+							filteredPosts.push(v);	
+						}
+					}
+				});
+			});
+			return filteredPosts;
+		};
+		
+	});
+	
+</script>
 			</div>
 			<div role="sidebar" id="sidebar">
 				<div>
@@ -90,18 +94,19 @@
 					
 						<a href="/BeerSlayer_Init.html">
 							<li>
-							
-								Not A Beer.. Chad<br/>
-							
+								Not A Beer.. Chad
 							</li>
 						</a>
 					
+					<a href="all.html">
+						<li>View All Beers</li>
+					</a>
 					</ul>
 				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="footer">
-				site generated with <a href="http://jekyllrb.com/">jekyll</a> put together by <a href="http://clillq.com">Chad Lillquist</a>
+			<div class="footer" id="footer">
+				Powered by <a href="http://jekyllrb.com/">jekyll</a> and  put together by <a href="http://clillq.com">Chad Lillquist</a>
 			</div>
 		</div>
 	</div>

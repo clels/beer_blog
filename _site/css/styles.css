@@ -64,8 +64,10 @@ a:hover {
         float: none;
         width: 100%;
         padding-left: 0px; }
+        .aPost .post_stats .post_ratings {
+          margin-top: 8px; }
       .aPost .tags {
-        padding: 10px 0 0; } }
+        padding: 10px 0 0 20px; } }
 
 body, p, h1, h2, h3, ul {
   padding: 0;
@@ -94,7 +96,8 @@ div[role="container"] {
   min-width: 800px; }
   @media screen and (max-width: 800px) {
     div[role="container"] {
-      min-width: 100%; } }
+      min-width: 100%;
+      overflow-x: hidden; } }
 
 div[role="content"] {
   background: #f2f2f3;
@@ -151,26 +154,25 @@ div[role="sidebar"] {
       z-index: 1;
       margin-left: -1px;
       border-radius: 5px 0px 0px 5px;
-      right: 0;
+      right: -50%;
       overflow: scroll;
-      z-index: -1; } }
+      z-index: -1;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; } }
   @media screen and (max-width: 600px) {
     div[role="sidebar"] {
       float: none;
-      width: 50%;
-      position: absolute;
-      padding: 10px;
-      margin-top: 40px;
-      top: 28px;
-      z-index: 1;
-      margin-left: -1px;
-      border-radius: 5px 0px 0px 5px;
-      right: 0;
-      overflow: scroll;
-      z-index: -1; } }
+      top: 28px; } }
 
 .footer {
-  padding: 10px 20px; }
+  padding: 10px 15px;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
 
 .header {
   padding: 15px 0;
@@ -240,13 +242,15 @@ hr {
 .moveMain {
   right: 55%; }
 
+.moveSide {
+  right: 0 !important; }
+
 p {
   color: #626364;
   line-height: 150%;
   font-size: 1rem; }
 
 .rating {
-  float: right;
   position: absolute;
   top: 37px;
   right: 15px;
@@ -258,11 +262,11 @@ p {
     height: 1.3rem; }
   @media screen and (max-width: 600px) {
     .rating {
-      width: 70%;
-      line-height: 1.3rem;
-      vertical-align: middle;
-      top: 45px;
-      right: 10px; }
+      width: 100%;
+      top: auto;
+      right: auto;
+      position: relative;
+      margin-top: 8px; }
       .rating img {
         height: 1.8rem; } }
 
@@ -278,33 +282,48 @@ ul[role="posts"] {
       float: left;
       width: 20%;
       margin-right: 15px; }
+    ul[role="posts"] li h1 {
+      width: 75%; }
     ul[role="posts"] li .postHolder {
       float: left;
       width: 77%;
       position: relative; }
       ul[role="posts"] li .postHolder .postBlurb {
         margin-top: 10px; }
-      ul[role="posts"] li .postHolder .postFooter {
-        margin-top: 10px; }
-        ul[role="posts"] li .postHolder .postFooter .tags {
-          float: left;
-          width: 70%; }
-          ul[role="posts"] li .postHolder .postFooter .tags p {
-            display: inline; }
-        ul[role="posts"] li .postHolder .postFooter .postedDate {
-          float: right;
-          width: 30%;
-          text-align: right; }
+    ul[role="posts"] li .postBlurb {
+      margin-top: 10px; }
+    ul[role="posts"] li .postFooter {
+      margin-top: 10px;
+      position: absolute;
+      bottom: 25px;
+      width: -webkit-calc(80% - 40px);
+      width: -moz-calc(80% - 40px);
+      width: calc(80% - 40px);
+      right: 15px; }
+      ul[role="posts"] li .postFooter .tags {
+        float: left;
+        width: 50%; }
+        ul[role="posts"] li .postFooter .tags p {
+          display: inline; }
+      ul[role="posts"] li .postFooter .postedDate {
+        float: right;
+        width: 50%;
+        text-align: right; }
     @media screen and (max-width: 600px) {
       ul[role="posts"] li {
         padding: 15px 10px; }
-        ul[role="posts"] li .postHolder {
-          width: 100%;
-          margin-top: 10px; }
+        ul[role="posts"] li h1 {
+          width: auto;
+          font-size: 2rem; }
         ul[role="posts"] li img.post_image {
           float: left;
-          width: 30%;
-          margin-right: 0; } }
+          width: 4rem;
+          margin-right: 8px;
+          margin-top: 4px; }
+        ul[role="posts"] li .postFooter {
+          display: none; }
+        ul[role="posts"] li .postBlurb {
+          margin-top: 8px; } }
   ul[role="posts"] li:hover {
     background: #f6f7f7; }
     ul[role="posts"] li:hover h1 {
@@ -325,11 +344,11 @@ ul[role="posts"] {
   position: absolute;
   background: #f2f2f3;
   padding: 20px;
-  bottom: 130%;
-  margin-left: -160px;
+  top: 110%;
+  margin-left: -130px;
   color: #626364;
   z-index: 6;
-  width: 250px;
+  width: 200px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;
   -o-box-shadow: rgba(0, 0, 0, 0.3) 0 0 10px;

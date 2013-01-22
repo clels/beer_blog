@@ -1,39 +1,60 @@
 ---
 layout: default
 ---
-<ul role="posts">
-	{% for post in site.posts %}
-			
-		{% for tag in post.tags[:params[:tag]] %}
-			Yay
-		{% endfor %}
-		{{:params[:tag]}}
-		<li>
-			{% include ratings.html %}
-			<a href="{{ post.url }}">
-		  		<img src="/images/{{ post.thumb }}" class="post_image"/>
-			</a>
-			<div class="postHolder">
-				<a href="{{ post.url }}">
-					<h1>{{ post.title }}</h1>
-				</a>	
-				<p class="postBlurb">{{ post.blurb }}</p>
-				<div class="postFooter">
-					<div class="tags">
-						<p>Tags : </p>	
-						{% for tag in post.tags %}
-							<a href="/find.html?tag={{tag}}">
-								{{tag}}
-							</a>
-						{% endfor %}
-					</div>
-					<div class="postedDate">
-						<p>Posted: {{ post.date | date_to_string }}</p>
-					</div>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</li>
-		
-	{% endfor %}
+<ul role="posts" id="results">
+	Loading results...
 </ul>
+
+<script type="text/javascript" charset="utf-8">
+
+	$(document).ready(function() {
+		
+		var param = window.location.search.replace( "?", "" );
+		var split = param.split("=");
+		var value = escape(split[1]);
+		var $results = $("#results");
+		
+		$.getJSON('posts.json', function(data) {
+			var theJSON = data;
+			var posts = filterResults(theJSON, value);
+			if (posts.length === 0) {
+				noResults();
+	 		} else {
+				foundSomething(posts);
+			}
+		});
+		
+		function noResults() {
+			$results.html("");
+			var theHTML = "<li><h2>Sorry, I did not find anything for: "+ value +"</h2></li>";
+			$results.append(theHTML);
+		};
+		
+		function foundSomething(posts) {
+			$results.html("");
+			$results.append("<li><h2>Results for: "+ value +"</h2></li>");
+			$.each(posts, function(i, v) {
+				var theHTML = "<li><a href=\""+ posts[i].href +"\"><img src=\"/images/"+ posts[i].thumb +"\" class=\"post_image\"/></a><a href=\""+ posts[i].href +"\"><h1>"+ posts[i].title +"</h1></a><p>"+ posts[i].blurb +"</p><div class=\"clear\"></div></li>";
+				$results.append(theHTML);
+			});
+		};
+		
+		var filterResults = function(posts, value) {
+			var filteredPosts = [];
+			$.each(posts, function(i, v) {
+				$.each(v, function(index, item) {
+					if(item.indexOf(value) != -1 && value.length != 0){
+						if($.inArray(v, filteredPosts) != -1){
+							return;
+						}else{
+							filteredPosts.push(v);	
+						}
+					}
+				});
+			});
+			return filteredPosts;
+		};
+		
+	});
+	
+</script>

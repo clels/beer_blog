@@ -2,7 +2,8 @@
 layout: default
 ---
 <ul role="posts">
-	{% for post in site.posts limit:20 %}
+	<li><h2>All Beers:</h2></li>
+	{% for post in site.posts %}
 		<li>
 			<a href="{{ post.url }}">
 		  		<img src="/images/{{ post.thumb }}" class="post_image"/>

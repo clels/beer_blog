@@ -50,6 +50,6 @@ beer_type:
 .tags
 	Tags: 
 	{% for tag in page.tags %}
-	%a{:id => "tag", :data => ""}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
 		{{tag}}
 	{% endfor %}

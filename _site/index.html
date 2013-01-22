@@ -2,10 +2,10 @@
 <html>
 <head>
   	<meta charset=utf-8 />
-	<meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-  	<title> Beer Slayer Blog </title>
+	<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport" />
+  	<title> Beer Slayers Blog </title>
+	<link rel="icon" type="image/ico" href="favicon.ico">
   	<link rel="stylesheet" href="/css/styles.css" />
-	<link rel="stylesheet" href="/css/styles.css" />
 	<script type="text/javascript" charset="utf-8" src="/javascript/jQuery.js" ></script>	
 	<script type="text/javascript" charset="utf-8" src="/javascript/site.js" ></script>	
 	<script type="text/javascript" charset="utf-8" src="/javascript/tag_hover.js"></script>		
@@ -17,7 +17,7 @@
 				<a href="/">
 					<img src="/images/logo.png" class="logo" alt="Beer Slayers Blog" />
 				</a>
-				<h1>Beer Slayer</h1>
+				<h1>Beer Slayers</h1>
 				<p>Blogging about beer...</p>
 				<img src="/images/menu.png" class="mobileMenu" id="menu"/>
 				<div class="clear"></div>
@@ -26,7 +26,27 @@
 				<ul role="posts">
 	
 		<li>
-			
+			<a href="/BeerSlayer_Init.html">
+		  		<img src="/images/chad_thumb.jpg" class="post_image"/>
+			</a>
+				<a href="/BeerSlayer_Init.html">
+					<h1>Beer Slayers Init!</h1>
+				</a>	
+				<p class="postBlurb">Sadly not reporting a slain, but to introducing myself.  Im Chad Lillquist and I have been known as beer slayer :)</p>
+				<div class="postFooter">
+					<div class="tags" id="tags">
+						<p>Tags : </p>	
+						
+							<a data="" id="tag" href="find.html?this=Beer">
+								Beer
+							</a>
+						
+					</div>
+					<div class="postedDate">
+						<p>Posted: 15 Jan 2013</p>
+					</div>
+				</div>
+				
 	<div class="rating">
 		<img src="/images/rated_on.png" />
 		<img src="/images/rated_on.png" />
@@ -34,6 +54,7 @@
 		<img src="/images/rated_on.png" />
 		<img src="/images/rated_on.png" />
 		<p>Rated: </p>
+		<div class="clear"></div>
 	</div>
 
 
@@ -46,29 +67,7 @@
 
 
 
-			<a href="/BeerSlayer_Init.html">
-		  		<img src="/images/chad_thumb.jpg" class="post_image"/>
-			</a>
-			<div class="postHolder">
-				<a href="/BeerSlayer_Init.html">
-					<h1>Beer Slayers Init!</h1>
-				</a>	
-				<p class="postBlurb">Sadly not reporting a slain, but to introducing myself.  Im Chad Lillquist and I have been known as beer slayer :)</p>
-				<div class="postFooter">
-					<div class="tags" id="tags">
-						<p>Tags : </p>	
-						
-							<a data="" id="tag">
-								Beer
-							</a>
-						
-					</div>
-					<div class="postedDate">
-						<p>Posted: 15 Jan 2013</p>
-					</div>
-				</div>
-			</div>
-			<div class="clear"></div>
+				<div class="clear"></div>
 		</li>
 	
 </ul>
@@ -86,18 +85,19 @@
 					
 						<a href="/BeerSlayer_Init.html">
 							<li>
-							
-								Not A Beer.. Chad<br/>
-							
+								Not A Beer.. Chad
 							</li>
 						</a>
 					
+					<a href="all.html">
+						<li>View All Beers</li>
+					</a>
 					</ul>
 				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="footer">
-				site generated with <a href="http://jekyllrb.com/">jekyll</a> put together by <a href="http://clillq.com">Chad Lillquist</a>
+			<div class="footer" id="footer">
+				Powered by <a href="http://jekyllrb.com/">jekyll</a> and  put together by <a href="http://clillq.com">Chad Lillquist</a>
 			</div>
 		</div>
 	</div>

@@ -1,9 +1,9 @@
 function handleTags(tags) {
 	for(var i=0;i<tags.length;i++){
 		var tagValue = $.trim(tags[i].innerHTML);
-		tags[i].attributes[0].value = tagsJson[tagValue];
-		if(tags[i].attributes[0].value === "undefined"){
-			tags[i].attributes[0].value = "I need to make a tag blurb for this...I need to make a tag blurb for this...";
+		tags[i].attributes.data.value = tagsJson[tagValue];
+		if(tags[i].attributes.data.value === "undefined"){
+			tags[i].attributes.data.value = "I need to make a tag blurb for this...I need to make a tag blurb for this...";
 		}
 	}
 };
