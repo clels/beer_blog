@@ -1,0 +1,61 @@
+---
+layout: default
+published: false
+---
+
+---
+layout: post
+run: HamlConverter
+
+image: 2013-01-21-Dales_Tallboy.jpg
+thumb: 2013-01-21-Dales_Tallboy_thumb.jpg
+
+author: Chad Lillquist
+title: Dales Pale Ale Tallboy
+sub_title: Perfect beer for the ski hill.
+blurb: Dales Pale Ale is hoppy beer from Oskar Blues in Colorado and has won 
+
+tags: ["Ale", "Pale Ale", "Bitter", "Heavy", "Can", "Tallboy"]
+rating: 4
+
+brewery: Oskar Blues
+beer_name: Dales Pale Ale
+beer_abv: 6.5%
+beer_ibus: 65
+beer_type: Pale Ale
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%pIt was a good day on the groomers, but you know what made it better?  Dales Tallboy!  The price of the beer is a kick in the nuts, but so is any beer you buy from a ski resort.  Have you had a Dales before?
+	%pDales is a hearty drink.  With tons of hops flavor this is not for your light beer drinkers.  I was a little surprised to see that this beer had IBUs at 65, if you were to taste this beer, you would think its a much higher.  With a nice kick in flavor, this beer also comes with a decently high abv.  Up in high altitude, you have too many at 6.5% and you wont be getting home.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
