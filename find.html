@@ -9,6 +9,17 @@ layout: default
 
 	$(document).ready(function() {
 		
+		if(!Array.indexOf){
+			Array.prototype.indexOf = function(obj){
+				for(var i=0; i<this.length; i++){
+					if(this[i]==obj){
+						return i;
+					}
+				}
+				return -1;
+			}
+		}
+		
 		var param = window.location.search.replace( "?", "" );
 		var split = param.split("=");
 		var value = unescape(split[1]);

@@ -3,47 +3,25 @@ layout: post
 run: HamlConverter
 
 image: chad.jpg
-thumb: chad_thumb.jpg
-
-author: Chad Lillquist
-title: Beer Slayers Init!
-sub_title: A Beer Slayer's first post
-blurb: Sadly not reporting a slain, but to introducing myself.  Im Chad Lillquist and I have been known as beer slayer :)
-
-tags: ["Beer"]
-rating: 5
-
-brewery: 
-beer_name: Not A Beer.. Chad
-beer_abv: 
-beer_ibus: 
-beer_type: 
 ---
 
 %img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
 .post_stats
-	{% include post_ratings.haml %}
-	.statsRow
-		%p Brewery:
-		%h3 {{page.brewery}}
 	.statsRow
 		%p Name:
-		%h3 {{page.beer_name}}
+		%h3 Chad Lillquist
 	.statsRow
-		%p Type:
-		%h3 {{page.beer_type}}
+		%p Favorite Brewery:
+		%br
+		%h3 Renegade Brewery, CO 
 	.statsRow
-		%p ABV:
-		%h3 {{page.beer_abv}}
-	.statsRow
-		%p IBUs:
-		%h3 {{page.beer_ibus}}
+		%p Favorite Beer:
+		%br
+		%h3 Raging Bitch, Flying Dog 
+
 .clear
 
 .post_body
-	%h1 {{page.title}}
-	%h2 {{page.sub_title}}
-	%p.noIndent Author: {{page.author}}
 	
 	%p 
 		%b Why am I doing this, I'll tell you why I'm doing this... 
@@ -62,10 +40,3 @@ beer_type:
 	%p 
 		%b The Technology? 
 		Jekyll seemed cool and I wanted to give it a whirl, Jekyll is a static site generator that will help automate some of the processes that would get with a web framework but while not being web framework.  Seemed interesting, and this is my project to play around with it.  Should be fun.  It was pretty simple to get running, and will probably use it again for another website.
-
-.tags
-	Tags: 
-	{% for tag in page.tags %}
-	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
-		{{tag}}
-	{% endfor %}
