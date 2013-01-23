@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-01-23-Prost-Stiegl.jpg
+thumb: 2013-01-23-Prost-Stiegl_thumb.jpg
+
+author: Chad Lillquis
+title: Fresh Stiegl Pils
+sub_title: Ill have a litre of beer please
+blurb: After a day at Breckenridge, you should stop in Frisco at a place called Prost if you want the good stuff.
+
+tags: ["German","Pilsner","Light","Draught"]
+rating: 3
+
+brewery: Stiegl
+beer_name: Stiegl Pils
+beer_abv: 4.9%
+beer_ibus: ..
+beer_type: German Pilsner
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
