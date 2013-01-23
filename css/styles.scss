@@ -10,6 +10,7 @@ $light_grey:#f2f2f3;
 $highlight:#f6f7f7;
 
 @import url(http://fonts.googleapis.com/css?family=Signika);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 *{
 	-webkit-box-sizing: border-box;
@@ -140,7 +141,7 @@ body{
   	background:$dark_grey;
   	color:$text_dark;
   	font-size:16px;
-	font-family:'Signika',sans-serif;
+	font-family:'Signika', 'Open Sans', sans-serif;
 	
 	@media screen and (max-width: 800px) {
 		width:100%;
@@ -358,6 +359,7 @@ p{
 	color:$text_light;
 	line-height:150%;
 	font-size:1rem;
+	font-family:'Open Sans';
 }
 
 .rating{
