@@ -8,25 +8,27 @@ layout: default
 <script type="text/javascript" charset="utf-8">
 
 	$(document).ready(function() {
-		
-		if(!Array.indexOf){
-			Array.prototype.indexOf = function(obj){
-				for(var i=0; i<this.length; i++){
-					if(this[i]==obj){
-						return i;
-					}
-				}
-				return -1;
-			}
-		}
+
+		// if(!Array.indexOf){
+		// 			Array.prototype.indexOf = function(obj){
+		// 				for(var i=0; i<this.length; i++){
+		// 					if(this[i]==obj){
+		// 						return i;
+		// 					}
+		// 				}
+		// 				return -1;
+		// 			}
+		// 		}
 		
 		var param = window.location.search.replace( "?", "" );
 		var split = param.split("=");
 		var value = unescape(split[1]);
 		var $results = $("#results");
 		
-		$.getJSON('posts.json', function(data) {
-			var theJSON = data;
+		console.log("Finding Matches for ..."+ value);
+
+		$.getJSON('posts.json', function(theJSON) {
+			console.log(theJSON);
 			var posts = filterResults(theJSON, value);
 			if (posts.length === 0) {
 				noResults();

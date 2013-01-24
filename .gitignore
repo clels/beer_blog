@@ -1,2 +1,2 @@
-_site
-Rakefile.rb
+_site/
+.DS_Store
