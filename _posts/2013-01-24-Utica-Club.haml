@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-01-24-Utica-Club.jpg
+thumb: 2013-01-24-Utica-Club_thumb.jpg
+
+author: Chad Lillquist
+title: A Yachtsmen Dream
+sub_title: Old American Shit Beer
+blurb: The tagline on this beer is "The first beer sold after prohibition", tastes like it too.  This is what American beer used to be like.
+
+tags: ["Lager","Pilsner","Sour","Light","Can"]
+rating: 1
+
+brewery: Matt Brewing Company
+beer_name: Utica Club
+beer_abv: 3.9%
+beer_ibus: ..
+beer_type: Pilsner Lager
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Utica Club, you have failed me.  But thats what you can probably expect when ordering a beer of the month from a hipster hangout.  Forest Room 5 in Denver is a unique place to say the least.  To work there, I swear they have one of those you have to be this tall to do this tests, but its You have to be this Hipster to work here.  The walls are covered in stuffed small animals and toy dolls that are missing eyes or something, very demented decor if you pay attention.  The food is really nice, a real chef made that menu, swapping out pub food for sophistication, scallops and fillets if you desire.
+	%p The beer is piss, I bet literally.  I dont know Utica New York but there club sucks.  I could see snobby Yachtsmen drinking this with their nose in the air and loafer on the schooner.  Keep your beer.  If your looking for a piss beer, give this one a try.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
