@@ -17,6 +17,6 @@ task :build do
 end
 
 desc 'Test Cron'
-task :build do
+task :test do
   puts 'test cron'
 end
