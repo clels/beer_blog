@@ -21,6 +21,7 @@ layout: nil
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://{{ site.domain }}{{ post.id }}</id>
    <content type="html">
+		<img src="http://{{ site.domain }}/images/{{ post.thumb }}"/>
 		{{ post.sub_title }}<br/>
 		{{ post.blurb }}<br/>
 		Brewery: {{ post.brewery }}<br/>
