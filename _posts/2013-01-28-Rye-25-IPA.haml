@@ -1,0 +1,61 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-01-28-Rye-25-IPA.jpg
+thumb: 2013-01-28-Rye-25-IPA_thumb.jpg
+
+author: Chad Lillquist
+title: Afternoon Gold
+sub_title: Denver Beer Company is a great afternoon hangout
+blurb: Denver Beer Company in the lower highlands of Denver has one kick ass location, Their beers.. They are ok, some are good, some are not.
+
+tags: ["Ale", "IPA", "Draught"]
+rating: 3
+
+brewery: Denver Beer Company
+beer_name: Rye 25 IPA
+beer_abv: ..
+beer_ibus: ..
+beer_type: IPA
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p This is kind of medium effort post.  I don't know some of the infos on this beer, like ABV or IBUs, but if I had to guess, it would be 4.9% ABV and 55 IBUs.  This was a standard IPA, hop flavor was present, but lacking in my opinion...  I expect a bit more from Denver Beer Company (lacking bold flavors or distinction), maybe its just me but I feel they are making just the standard beers.  Sometimes they brew a beer that is adventurous, for instance, a Graham Cracker Porter.
+	%p The one thing Denver Beer Company has going for them is location.  Sweet beer garden tables outside with downtown skyline glimpses, and highlands posh feel.  The inside is cool as well, local art on the walls, garage type interior feel, and beer making process visible from the tap room.  When I was here on this day, I see that they had made some expansions, A barrel room where it looks like you can reserve for private parties and other areas.  (I bet the barrel aged beer is really tasty)
+	%p I recommend visiting Denver Beer Company, go on a nice day, have a nice pint, and relax in Denver!
+	%p.noIndent
+		Visit Denver Beer Company Website
+		%a{:href => "http://denverbeerco.com/"}
+			here
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
