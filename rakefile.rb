@@ -17,6 +17,7 @@ task :build do
 end
 
 desc 'Test Cron'
-task :test do
-  puts 'test cron'
+task :assets do
+  sh 'jammit -o assets -c _assets.yml'
+  puts 'assets dir created'
 end

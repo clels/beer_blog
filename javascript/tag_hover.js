@@ -19,6 +19,8 @@ var tagsJson = {
 	"Pilsner":"It name came from the city of Pilsen (Plzeň in Czech) where it was first produced in 1842.",
 	"Stout":"A dark beer made using roasted malt or roasted barley.",
 	"Porter":"A dark style of beer originating in London in the 18th century",
+	"Saison":"A sturdy farmhouse ale that was traditionally brewed in the winter, to be consumed throughout the summer months.",
+	"Chinook":"Chinook hops are popular in american style Pale Ale and India Pale ale craft beers.",
 
 	//Locations
 	"German":"For many years German beer was brewed in adherence to the Reinheitsgebot order or law which only permitted water, hops and malt as beer ingredients.",
@@ -49,6 +51,9 @@ var tagsJson = {
 	"Forty":"Back in the day...",
 	
 	//Times
-	"Winter Beer":"A heavy thick beer to keep you warm."
+	"Winter Beer":"A heavy thick beer to keep you warm.",
+	
+	//Colors
+	"Red":"Primarily a catch all for any beer less than a Dark Ale.",
 	
 };

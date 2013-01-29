@@ -1,0 +1,59 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-01-28-BSB.jpg
+thumb: 2013-01-28-BSB_thumb.jpg
+
+author: Ryan Andrew Debits
+title: The Art of Beer
+sub_title: Black Shirt Brewery defines the art of brewing.
+blurb: The brewery might have just opened and in somewhat of an inconspicuous location, but these guys are here to redefine beer as an art form.
+
+tags: ["Pale Ale", "Red", "Saison", "IPA", "Chinook"]
+rating: 3
+
+brewery: Black Shirt Brewing
+beer_name: BSB Flight
+beer_abv: ..
+beer_ibus: ..
+beer_type: ..
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p The brewery might have just opened and in somewhat of an inconspicuous location, but these guys are here to redefine beer as an art form. Everything from the rustic decor to the slanted Offero glasses, Black Shirt Brewing will change the way to think about and drink beer. But don't expect these guys to show up at the Great American Beer Festival…they hold their art very near and dear and not to be intertwined with the masses.
+	%p.noIndent
+		Visit Black Shirt Brewing Website
+		%a{:href => "http://www.blackshirtbrewingco.com"}
+			here
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
