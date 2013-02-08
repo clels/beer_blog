@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-09-The-Addiction.jpg
+thumb: 2013-02-09-The-Addiction_thumb.jpg
+
+author: Chad Lillquist
+title: The Addiction
+sub_title: Bourbon Barrel Aged Is The Key
+blurb: Mountain Sun and Vine Street Pub do something awesome in February..  Its Stout Month!  Rotating Stouts from local and far for the whole month
+
+tags: ["Stout", "Heavy", "Draught"]
+rating: 4
+
+brewery: Mountain Sun
+beer_name: Addiction Imperial Coffee Stout
+beer_abv: 10%
+beer_ibus: ..
+beer_type: Imperial Stout
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p There is something about a stout in the winter months that just feels right.  Just meant to be together I guess.  Vine Street Pub, a Denver residence of Mountain Sun Brewery that resides in Boulder, CO, produces some fine beer!  This Addiction Ale won the Silver medal in the 2010 World Beer Cup.  The one I tried was a barrel aged version of the 2010 beer.  Bourbon barrel aged.
+	%p The beer itself is superior.  Malty..Carmel..Robust..Rich..Balanced..Complex..Heavy.. The description of this beer could go on and on.  Lots of coffee and tons of malts.  If you ever get a chance to have this beer, do it!  Superb and fine, about all I have to say about it.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

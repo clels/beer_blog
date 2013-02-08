@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-10-New-Ski-Breakfast.jpg
+thumb: 2013-02-10-New-Ski-Breakfast_thumb.jpg
+
+author: Chad Lillquist
+title: New Ski Breakfast
+sub_title: Durango, CO has a great stout
+blurb: The great area of south western CO has produced the best ski breakfast known to man.  A great stout makes for a great day on the hill.
+
+tags: ["Stout", "Heavy", "Draught"]
+rating: 3
+
+brewery: Telluride Brewing Company
+beer_name: Ski In Ski Stout
+beer_abv: 5.8%
+beer_ibus: ..
+beer_type: Stout
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Ski In Ski Stout is one to remember in my mind.  I don't see its distribution very often but if I did, believe I would I have it more often (in the winter that is).  Oats and Marley make this beer robust and fulfilling.  Complex while simple, makes this easy and enjoyable at the same time.
+	%p This beer was part of Vine Street Pubs Stout Month, the whole month of February there is a mix of stouts from far and near that get rotated on the taps.  Bless them for stout month! 
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
