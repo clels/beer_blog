@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-20-Ruthless-Sierras.jpg
+thumb: 2013-02-20-Ruthless-Sierras_thumb.jpg
+
+author: Chad Lillquist
+title: Ruthless Sierras
+sub_title: California beer with a kick
+blurb: Sierra Nevada had one of the first hoppy beers I enjoyed, Now they have a rye beer loaded with hops, good work!
+
+tags: ["IPA", "Ale", "Bitter", "Heavy", "Winter Beer"]
+rating: 3
+
+brewery: Sierra Nevada
+beer_name: Ruthless Rye
+beer_abv: 6.6%
+beer_ibus: 55
+beer_type: Rye IPA
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p When I see rye used in the name of the beverage, I know I am getting a nice kick in the beverage.  Whether its a bourbon or a beer, a rye means good!  Sierra Nevada is a company that made it on a pale ale, but some of their other beers they make are some of the best in its class. 
+	%p This beer was hoppy beyond some peoples comfort zone and maltier than some of the beers that people would call malty.  A well done beer, one that I prefer to drink at room temperature.  If you get a chance try this beer out, it has distribution and the flavor and a price is definitely worth it.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

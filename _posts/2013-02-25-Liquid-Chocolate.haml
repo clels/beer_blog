@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-25-Liquid-Chocolate.jpg
+thumb: 2013-02-25-Liquid-Chocolate_thumb.jpg
+
+author: Chad Lillquist
+title: Liquid Chocolate
+sub_title: A chocolates lovers must try
+blurb: This is a treat, it was rich and delicious with chocolate flavors, and at a great price.
+
+tags: ["Chocolate", "Malty", "Heavy", "Winter Beer"]
+rating: 4
+
+brewery: Drakes Brewing
+beer_name: Drakonic
+beer_abv: 8.75%
+beer_ibus: 40
+beer_type: Imperial Stout
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Roasted chocolate flavors dominate this beer.  I like that it coats your mouth and holds onto its rich flavors for long lasting enjoyment.  I think this beer was $4.99 and at that price I would definitely get it again.  I heard someone say once that "Beer is the new wine", and I think that applies here.  About the same by volume of liquid as a wine but less per bottle and just as complex of flavors.  I understand now, I can get a tasting experience in a beer that once a wines world.  I recommend trying new beers, you bound to find a flavor you like.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

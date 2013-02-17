@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-24-Coffee-and-Stout.jpg
+thumb: 2013-02-24-Coffee-and-Stout_thumb.jpg
+
+author:
+title: Coffee and Stout
+sub_title: It could of been better
+blurb: There is something missing with this beer, I think I know what it is, but do the makers know? 
+
+tags: ["Stout", "Light", "Draught"]
+rating: 2
+
+brewery: TRiNiTY Brewing Company
+beer_name: Awaken chicory coffee stout
+beer_abv: 6.0% 
+beer_ibus: ..
+beer_type: Coffee Stout
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Coffee in stouts are a great idea, but Trinity Brewing Company I am afraid has missed it.  I don't know much about the brewing company, but I don know what I like and expect in a stout, and this fell short of most of the marks.  It was bitter with a bite, but light and watery.  Not sure I would get it again.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-23-Winter-Beer-Perfection.jpg
+thumb: 2013-02-23-Winter-Beer-Perfection_thumb.jpg
+
+author: Chad Lillquist
+title: Winter Beer Perfection
+sub_title: Sweet and Spicy like a nice cider
+blurb: This beer has skyrocketed to my favorite of winter beers, shame its on a limited distribution.
+
+tags: ["Heavy", "Winter Beer", "Ale", "Can"]
+rating: 5
+
+brewery: 21st Amendment
+beer_name: Fireside Chat
+beer_abv: 7.9%
+beer_ibus: 45
+beer_type: Winter Spiced Ale
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p One of my favorite breweries that I have tried in SF is the 21st Amendment.  They have the best wheat beer that I can imagine, Hell or High Watermelon.  But this in not about a wheat beer, this is a Winter Spiced Ale, a seasonal beer for the winter months.  
+	%p I like this beer in slow sips, with some sweet nutty and spice (cinnamon) flavors, it is a great beer for any relaxing winter nights.  The ones where you open a book and if your lucky enough to be by a fire.  I highly recommend this beer for anyone able to try, or any of 21st amendment beers.  Go to SF and have some beers at their tap room, then go to giants game, could not get better than that.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

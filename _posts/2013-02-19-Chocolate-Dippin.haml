@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-19-Chocolate-Dippin.jpg
+thumb: 2013-02-19-Chocolate-Dippin_thumb.jpg
+
+author: Chad Lillquist
+title: Chocolate Dippin
+sub_title: Roasted chocolate flavors come washing in
+blurb: Smooth and Rich beer with a heavy amount of chocolate flavor brings a sweet flavor as a stout.
+
+tags: ["Heavy", "Malty", "Chocolate", "Stout", "Nitro", "Draught", "Winter Beer"]
+rating: 3
+
+brewery: Mountain Sun
+beer_name: Chocolate Dip Stout
+beer_abv: 6.9%
+beer_ibus: ..
+beer_type: Stout
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Mountain Sun, during February, its stout month and this is one their beers.  With a name like Chocolate Dip Stout, one would expect to have a forefront of chocolate.  This unfortunately did not match the name it was given in my opinion.  The beer is good, but chocolate is not the dominant flavor.  The beer is easy to drink and is sort of sweet, but in a month of stellar stouts to try, this one hangs a bit lower than average on my scale. 
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

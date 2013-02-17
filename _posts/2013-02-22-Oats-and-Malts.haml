@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-22-Oats-and-Malts.jpg
+thumb: 2013-02-22-Oats-and-Malts_thumb.jpg
+
+author: Chad Lillquist
+title: Oats and Malts
+sub_title: Beer as a food group
+blurb: Stouts are heavy and this beer will substitute for a meal any day.
+
+tags: ["Heavy", "Stout", "Draught", "Winter Beer", "Nitro"]
+rating: 3
+
+brewery: Coopersmith's Pub & Brewing
+beer_name: Horsetooth Stout
+beer_abv: 6.20%
+beer_ibus: 33
+beer_type: Nitro Oatmeal Stout
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Coopersmith's Pub & Brewing has made a great stout.  The beer is quite heavy, as you would expect with an oatmeal stout.  A full flavor, easy to drink beer due to the nitro pour.  Strikes to me slightly above average for stout.  A worthy local beer if its in your area.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

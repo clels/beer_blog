@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-18-Striking-Gold.jpg
+thumb: 2013-02-18-Striking-Gold_thumb.jpg
+
+author: Chad Lillquist
+title: Striking Gold
+sub_title: Beer that is as sweet as gold
+blurb: Goldmine has its place in the world, and that is on a boat!
+
+tags: ["Lager", "Light", "Can"]
+rating: 4
+
+brewery: World Brews
+beer_name: Goldmine
+beer_abv: 4.5%
+beer_ibus: ..
+beer_type: Lager
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Can you enjoy a cheap beer?  Thats a valid question right?  Well I am going to say that I thoroughly enjoyed Goldmine, so much so in fact, when I go visit SF, I will most likely chip out 3 dollars to get a six pack of this beer.  Thats right, $2.99 for a six pack.  The beer itself is a light lager, reminiscent of all early american beers, but with a fruity, easy drinking flavor, enjoyed in the sun type beer.
+	%p I would like to thank my brother for having the boat on the bay that we take out sailing, while having this beer.  Sailing in the bay has been my most favorite thing about visiting SF and this is the perfect beer for it.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

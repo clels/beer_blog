@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-02-21-Soothing-Simtra.jpg
+thumb: 2013-02-21-Soothing-Simtra_thumb.jpg
+
+author: Chad Lillquist
+title: Soothing Simtra
+sub_title: Hops x3 and Smooth Ale
+blurb: Imperial beers hold their name, as you can guess, they are superior to others.  This beer is a great example, above the rest.
+
+tags: ["Heavy", "IPA", "Ale", "Bitter"]
+rating: 4
+
+brewery: Knee Deep Brewing Company
+beer_name: Simtra
+beer_abv: 11.25%
+beer_ibus: 135
+beer_type: Imperial IPA
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p I was in California Recently and I had a goal, it was to try a beer from California that I could compare up to one of my Colorado beers.  This beer has done that and has probably topped my Colorado counterpart.
+	%p Imperial beers are over the top.  Bold.  Top of the line, and the finest.  This triple IPA is a delight.  For the IBUs they report 135 but I heard once that over a 100, is rarely detectable.  But regardless, thats a lot!  Simtra is a sweet HOPPY and super BITTER beer, not for the faint of heart.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
