@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-03-08-Cookies-And-Beer.jpg
+thumb: 2013-03-08-Cookies-And-Beer_thumb.jpg
+
+author: Chad Lillquist
+title: Cookies And Beer
+sub_title: If Girl Scouts made a beer...
+blurb: A minty chocolaty stout is an idea that should spread around to more brewers.
+
+tags: ["Stout"]
+rating: 3
+
+brewery: Mountain Sun
+beer_name: Girl Scout Cookie Stout
+beer_abv: ..
+beer_ibus: ..
+beer_type: Stout
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p As stout month came to an end, I had to run in for some of the last goodies that Vine Street (Mountain Sun) offered.  This beer, Girl Scout Cookie Stout is a genius idea.  The cookie used was thin mints.  Just the idea of a chocolate mint stout makes me drool a bit.  Unfortunately I can't say that I was to over impressed with the execution here on this beer.  Maybe it was rushed, maybe it just didn't turn out how I thought it should. 
+	%p I would describe this beer as a malty stout, with what feels like an alcohol bite initially.  It drinks pretty easy.  But leaves you asking where are the Girl Scout cookies?  Then when your having those thoughts of what happened to the cookies in the beer, a finish of thin mints that accompanies the ahhh.  Not the dominant flavor disappointingly, but just enough there to make sure the name is not falsely applied.  I would hope that this beer comes out again next year with another go at it, I could see this being a treat just like the cookies.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

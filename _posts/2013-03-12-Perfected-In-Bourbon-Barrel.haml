@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-03-12-Perfected-In-Bourbon-Barrel.jpg
+thumb: 2013-03-12-Perfected-In-Bourbon-Barrel_thumb.jpg
+
+author: Chad Lillquist
+title: Perfected In Bourbon Barrel
+sub_title: I believe in this beer!
+blurb: Nihilist's believe in nothing right?  Well I bet they believe in this beer.
+
+tags: ["Stout", "Heavy", "Winter Beer"]
+rating: 5
+
+brewery: Mountain Sun
+beer_name: Nihilist Imperial Stout
+beer_abv: ..
+beer_ibus: ..
+beer_type: Imperial Stout
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Let me just start off by saying that I LOVE this beer.  The perfection of this barrel aged beer is very impressive.  The name is sort of a mismatch and I would be curious to hear about why the name Nihilist.  I was under the impression that a nihilist is someone who doesn't care about much or anything.  Someone cared when they made this beer.
+	%p The beer itself is balanced beyond belief.  I say that because no matter how much I toot the horn about this beer, its still something that you can only understand by trying it.  Unfortunately you probably only get the chance in February at either of the mountain sun locations.  Its a smooth, rich, balanced, creamy, taste of bourbon barrel and not to much alcohol bite.  Super easy to drink, but don't slam it, savor it.  Melt in your mouth good beer.  It transformed me to paradise I had not been to from a beer in while.  Even if I didn't live in Colorado, this beer would be a great reason for a trip out here.  Superb perfection! 
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

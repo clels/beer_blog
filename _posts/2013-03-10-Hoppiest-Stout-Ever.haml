@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-03-10-Hoppiest-Stout-Ever!.jpg
+thumb: 2013-03-10-Hoppiest-Stout-Ever!_thumb.jpg
+
+author: Chad Lillquist
+title: Hoppiest Stout Ever
+sub_title: Can a stout be that hoppy?
+blurb: I thought I was drinking a dark IPA for a minute, but nope, just an over the top hoppy stout.
+
+tags: ["Stout", "Heavy", "Winter Beer"]
+rating: 3
+
+brewery: Mountain Sun
+beer_name: Megatron Imperial Stout
+beer_abv: ..
+beer_ibus: ..
+beer_type: Imperial Stout
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p When I order a stout, one of the last things I expect is Hopps.  Unless its an Imperial beer!  But still, tons  of hopps in a stout?  Yep, Megatron Imperial Stout has it.  Mountain Sun has named this beer and another that I didn't get to try (Oatimus Prime), after a transformer, Megatron.  This is a big beer and will knock you back.
+	%p The flavor lingers after ever sip, and has a bite of alcohol in it.  I asked what the IBUs are for the beer, and was disappointed by the answer.  The waitress said they don't measure IBUs.. Really, just don't care I asked.  A confident "Yep, don't care" was returned..  Regardless, the beer is a great imperial stout and could give competitors a run for their money.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
