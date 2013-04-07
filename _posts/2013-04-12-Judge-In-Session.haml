@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-04-12-Judge-In-Session.jpg
+thumb: 2013-04-12-Judge-In-Session_thumb.jpg
+
+author: Chad Lillquist
+title: Judge In Session
+sub_title: Your honor, I do say this is a tasty beer 
+blurb: This small batch collaboration ale is a 
+
+tags: ["Ale"]
+rating: 5
+
+brewery: Renegade and Strange Brewery
+beer_name: Judge Whoppner
+beer_abv: ...
+beer_ibus: ...
+beer_type: Malt Ale
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p The name of the beer is after a TV show, I am to young to remember the show, but was told it was real.  I LOVED this beer!  It was brewed with over the top amount of malts and collaborated idea  between two breweries.  Renegade and Strange!  They made an awesome brew.  I like the chocolate covered rim and dipped in crushed whoppers, it was a sweet beginning to a joy ride that was so flavorful and heavenly.  I want this beer to be on tap at all time, I would surely drink this at every chance possible and so should you. 
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

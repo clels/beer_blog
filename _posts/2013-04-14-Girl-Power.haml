@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-04-14-Girl-Power.jpg
+thumb: 2013-04-14-Girl-Power_thumb.jpg
+
+author: Chad Lillquist
+title: Girl Power
+sub_title: Female Brewing Only
+blurb: Nice to see some girl power in beer making industry.
+
+tags: ["Amber", "Ale"]
+rating: 3
+
+brewery: CO Female Brewer Collaboration
+beer_name: Ellegance
+beer_abv: 4.5%
+beer_ibus: ...
+beer_type: Belgian Amber
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p This beer was sweet and delightful, like girls I imagine who made it!  Alright enough of the cheese, although some cheese with this beer would great.  Or make a beer cheese soup with this beer.  I had it with hot wings and was loving the combo.  I hope to see more from this group in the future.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-04-08-Crisp-Pilsner.jpg
+thumb: 2013-04-08-Crisp-Pilsner_thumb.jpg
+
+author: Chad Lillquist
+title: Crisp Pilsner
+sub_title: Summer summer time kind of beer
+blurb: The drinkability of this is beer is great, perfect for any outdoor day
+
+tags: ["Pilsner", "Light"]
+rating: 3
+
+brewery: Great Divide
+beer_name: Nomad Pilsner
+beer_abv: 5.4%
+beer_ibus: ...
+beer_type: Pilsner
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p I have a confession, this next set of posts will be brief, the beers were slayed a while ago.  I just wanted archive the beers to site.
+	%p This beer is a really crisp clean flavor and a little floral. A light and bubbly feel to each swig, which makes for a easy drinking beer.  I think this would be an excellent summer time beer and will definitely pick it up again.  Hope it comes in cans...  
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

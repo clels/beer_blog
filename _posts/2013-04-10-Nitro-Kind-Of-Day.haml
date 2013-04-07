@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-04-10-Nitro-Kind-Of-Day.jpg
+thumb: 2013-04-10-Nitro-Kind-Of-Day_thumb.jpg
+
+author: Chad Lillquist
+title: Nitro Kind Of Day
+sub_title: Any day is a good day for a nitro kind ale
+blurb: Mountain Sun brewery has a beer that is worth trying out, find a Nitro Kind Ale today!
+
+tags: ["Nitro", "Ale"]
+rating: 4
+
+brewery: Mountain Sun
+beer_name: Nitro Kind Ale
+beer_abv: ...
+beer_ibus: ...
+beer_type: IPA
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p I love this beer, so smooth. A hoppy nitro pour that is sure to put a smile on your face.  If I could only get 1 beer for the rest of my life, this would be a contender.  I would recommend trying this beer.  It just popped into my head, but Mountain Sun Brewery is a serious contender in beer making, almost everything they do is a home run.. 
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
