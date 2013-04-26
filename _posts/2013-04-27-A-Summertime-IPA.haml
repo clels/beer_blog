@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-04-27-A-Summertime-IPA.jpg
+thumb: 2013-04-27-A-Summertime-IPA_thumb.jpg
+
+author: Chad Lillquist
+title: A Summertime IPA
+sub_title: This is a great hoppy, easy drinking summertime brew for beer lovers.
+blurb: I'll take this beer to any barbecue any day!
+
+tags: ["IPA", "Hoppy", "Ale", "light"]
+rating: 4
+
+brewery: Renegade Brewing Company
+beer_name: Apostate
+beer_abv: 4%
+beer_ibus: 60
+beer_type: IPA
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p On the lighter side of what I would expect from Renegades IPA but man this an easy drinking, flavorful, light, and enjoyable beer.  I like that though, sometimes Renegade is over the top with their creations, and need to take a step back and just make a beer that you can more than 1 of.  It also had nice carbonation to it so the head stuck around for most of the beer and the bubbliness of it was delightful.  I would suggest this to someone who looking to try a hoppier variety and is scared of some of the overpowering selections out there.  Good all around beer!
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

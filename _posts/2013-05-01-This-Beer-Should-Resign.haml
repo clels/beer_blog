@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-05-01-This-Beer-Should-Resign.jpg
+thumb: 2013-05-01-This-Beer-Should-Resign_thumb.jpg
+
+author: Chad Lillquist
+title: This Beer Should Resign! 
+sub_title: Titled after the resignation of Pope XVI, this beer too should leave the stage.
+blurb: If you like sweet wheat, this is yours
+
+tags: ["Sweet", "Wheat", "Ale"]
+rating: 1
+
+brewery: Renegade Brewing Company
+beer_name: Resignation XVI
+beer_abv: 9%
+beer_ibus: 30
+beer_type: Dunkelrauchweizenbock
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p I dont very many nice things to say about this beer other than if I was with a non-beer drinker or a someone not into hops, I would then suggest this beer for them.  For me it came across a sugar drink that I had chug down to move onto the next beer.  The over powering sweetness of the ale is not my style at all.  Nor is a wheat beer for that matter..  But alas, I dont turn down the chance to have a new flavor.
+	%p Not sure where the type of beer (Dunkelrauchweizenbock) came from.  I understand the second part of the name weizenbock but from a search it looks likes the full name is not a well defined style of beer.  I guess just make something up...
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

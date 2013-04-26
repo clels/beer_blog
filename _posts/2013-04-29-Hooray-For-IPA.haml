@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-04-29-Hooray-For-IPA.jpg
+thumb: 2013-04-29-Hooray-For-IPA_thumb.jpg
+
+author: Chad Lillquist
+title: Hooray For IPA
+sub_title: Finally a beer from Denver Beer Company I love!
+blurb: An IPA for IPA lovers
+
+tags: ["IPA", "Strong", "Heavy"]
+rating: 4
+
+brewery: Denver Beer Company
+beer_name: Incredible Pedal IPA
+beer_abv: ...
+beer_ibus: ...
+beer_type: IPA
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p There are many times when I go to Denver Beer Company to just sit on the picnic tables in the beer garden patio.  But usually not for a specific beer.  Now there is a beer (at least till they dont have it) to go there for.  Incredible Pedal is a heavy and super hoppy beer.  Right up my alley for taste!  It will definitely be getting this upon returning to the beer garden patio.  Keep it up Denver Beer Company.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
