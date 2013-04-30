@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-05-08-A-Drinkable-Wheat.jpg
+thumb: 2013-05-08-A-Drinkable-Wheat_thumb.jpg
+
+author: Chad Lillquist
+title: A Drinkable Wheat
+sub_title: One of Renegades staple beer makes it way into a pint can, and is worth a try
+blurb: Finally a wheat beer that I enjoy.
+
+tags: ["Ale", "Wheat"]
+rating: 3
+
+brewery: Renegade Brewing Company
+beer_name: 5:00 Afternoon Ale
+beer_abv: 5%
+beer_ibus: 25
+beer_type: Afternoon Ale
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p On my way to one of the first barbecues of the season and I thought that maybe I would give the 4 pack of 5:00 cans from Renegade a try. It was a good choice I may say.  Im not to big of a fan of Wheat style beers, but this one is ok.  Very smooth and drinkable, but not sweet like other wheats.  No fruit will be given to you either with this beer, thats for posers.  A bit on the steep side price wise to grab one togo, but thats to be expected from small brewing company.  What would be perfect is this in a keg, for a house party or picnic in the summer time.  As the kids say, that would be dope!
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

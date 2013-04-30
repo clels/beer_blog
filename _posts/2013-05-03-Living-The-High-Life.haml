@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-05-03-Living-The-High-Life.jpg
+thumb: 2013-05-03-Living-The-High-Life_thumb.jpg
+
+author: Chad Lillquist
+title: Living The High Life
+sub_title: A beer that has stood the test time and is still here
+blurb: The next best "Champagne" after real Champagne
+
+tags: ["Light", "Lager", "Can"]
+rating: 2
+
+brewery: Miller Brewing Company
+beer_name: High Life
+beer_abv: 4.6%
+beer_ibus: ...
+beer_type: Lager
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p A quick look at the Miller brewing companies Wikipedia page, it says the high life beer was first introduced in 1903!  Thats over a century old, kudos for keeping it going that long and making it through such things as prohibition.  I wonder if they have changed the recipe at all, because when I have a high life, I feel like I am drinking dirt.  Well its not that bad but not my favorite type of crappy lager.  
+	%p I go to a Ruby on Rails meetup every month and they decide to host it in one of Denver's most hipster places.  I have mentioned this place before and if your a fan of Beerslayers (Haha) you know it as Forest Room 5.  There they have a mystery can of the month, and I am always down for a surprise, but this time I got a high life.  Sad face.  Oh well, it had to make its way onto BeerSlayers eventually.  Cheers for a century old beer!
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

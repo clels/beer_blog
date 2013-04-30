@@ -1,0 +1,56 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-05-05-Closing-Weekend-Breakfast.jpg
+thumb: 2013-05-05-Closing-Weekend-Breakfast_thumb.jpg
+
+author: Chad Lillquist
+title: Closing Weekend Breakfast
+sub_title: Need a nice hearty beer to start your ski day, try an Old Chub
+blurb: Pack in Pack out type of breakfast
+
+tags: ["Ale", "Heavy", "Can"]
+rating: 4
+
+brewery: Oskar Blues
+beer_name: Old Chub
+beer_abv: 8.0%
+beer_ibus: ...
+beer_type: Scotch Ale
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p This is bit of a late post but one that had to make it onto the site, reason being, its a kick ass beer and that I probably wont drink in the summer time.  To heavy for heat.  But for Closing weekend at the ski resorts (where consumed), call it almost perfect.  The beer is heavy in flavor, alcohol, and viscosity.  Its like molasses but with booze!
+	%p Oskar Blues is a brewing company that I don't think I have much of on here yet other than a Dales Pale Ale (Also really good beer).  The brewery is putting out some of my favorite canned beers with a go big attitude.  Love the whole lineup provided in cans and also if you visit the taproom your sure to find a brew that is not distributed outside there premisses.  Worth the visit to Lyons Colorado. 
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
