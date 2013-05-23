@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-05-30-A-Beer-From-Vietnam.jpg
+thumb: 2013-05-30-A-Beer-From-Vietnam_thumb.jpg
+
+author: Chad Lillquist
+title: A Beer From Vietnam
+sub_title: Goes well with spicy food.
+blurb: These asian lagers go real well with spicy food.
+
+tags: ["Lager", "Light"]
+rating: 2
+
+brewery: Saigon Beer Company
+beer_name: Saigon Export
+beer_abv: 4.7%
+beer_ibus: ...
+beer_type: Lager
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p I think I could enjoy this beer more if I was getting it a the price its sold at in Vietnam.  But Im pretty sure I paid close to five bucks for this. Not worth five bucks at all, but with some spicy thai food, it worked well.  If I am ever in Vietnam I will probably give this another try, other than than, nah. 
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

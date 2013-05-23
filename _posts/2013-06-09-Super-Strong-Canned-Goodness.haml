@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-06-09-Super-Strong-Canned-Goodness.jpg
+thumb: 2013-06-09-Super-Strong-Canned-Goodness_thumb.jpg
+
+author: Chad Lillquist
+title: Super Strong Canned Goodness 
+sub_title: Its like wine in a can
+blurb: For a ritzy purchase, try the Elevation beer in the can from Renegade Brewing Company
+
+tags: ["Can", "IPA", "Strong"]
+rating: 4
+
+brewery: Renegade Brewing Company
+beer_name: Elevation
+beer_abv: 11.2%
+beer_ibus: 100+
+beer_type: Triple IPA
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p I had pretty good tab at renegade for making them a website, but I believe buying the 4 pack of Elevation in cans from them is the last purchase on the tab.  Im going to miss not having to "pay" for the beers, about a year of just most excellent Colorado brews.  The canned Elevation is just as good as the tap, you know its fresh too when you buy it from the taproom.  I wrote about this beer before so I wont go to much into the flavors.  But can say that I do love over the top hops!
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-06-05-40-Ounces-To-Freedom.jpg
+thumb: 2013-06-05-40-Ounces-To-Freedom_thumb.jpg
+
+author: Chad Lillquist
+title: 40 Ounces To Freedom
+sub_title: Summer Summer Time
+blurb: You really only get one of these for looks or fun, not for the beer or flavor.
+
+tags: ["Forty", "Malt Liquor"]
+rating: 2 
+
+brewery: Miller Brewing Co.
+beer_name: Olde English 800
+beer_abv: 5.90%
+beer_ibus: ...
+beer_type: Malt Liquor
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p On a budget? Like being Gangster? Going to a Barbecue? If you answered yes to any of those, Olde English 800 Forty is for you.  I went to a barbecue and was on budget so naturally I went with the OE. Shitty in flavor and warm by the end, not what I would normally look for in a beer.  You need to have a good pace if plan on getting to the end before the warmth comes in.  If not, dont feel bad dumping the rest out for your homies! 
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

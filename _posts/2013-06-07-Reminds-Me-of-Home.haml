@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-06-07-Reminds-Me-of-Home.jpg
+thumb: 2013-06-07-Reminds-Me-of-Home_thumb.jpg
+
+author: Chad Lillquist
+title: Reminds Me of Home
+sub_title: Cant bring this on canoe though.
+blurb: A kolsche style beer from Wisconsin's own Leinekugels is perfect for an on the lake day.
+
+tags: ["Light", "Kolsche"]
+rating: 3
+
+brewery: Jacob Leinenkugel Brewing Company
+beer_name: Canoe Paddler
+beer_abv: 5.00%
+beer_ibus: ...
+beer_type: Kolsche
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Im from Minnesota and neighbor to use in Wisconsin, so I am no stranger to Leinekugels.  This is one beer I have not had from them though, must of been released after I moved away.  The beer itself was refreshing and light, with nice sweet flavor that makes it easy to drink.  Leinekugels need to can this though (maybe they do) because everyone knows not to have glass by the water or a boat.  If I had one criticism about this beer, is that the beer itself has very little bite.  I like crisp bites in my lighter in color beers.  This was just a bit too smooth.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

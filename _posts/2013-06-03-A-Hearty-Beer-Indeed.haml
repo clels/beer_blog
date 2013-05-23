@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-06-03-A-Hearty-Beer-Indeed.jpg
+thumb: 2013-06-03-A-Hearty-Beer-Indeed_thumb.jpg
+
+author: Chad Lillquist
+title: A Hearty Beer Indeed
+sub_title: Strong Dark and Smokey.
+blurb: This beer is sure to give you a flavor you have not tried yet or in at least a while.
+
+tags: ["Strong", "Ale", "Dark", "Smokey"]
+rating: 4
+
+brewery: Stone Brewing Co.
+beer_name: Sublimely Self-Righteous
+beer_abv: 8.70%
+beer_ibus: ...
+beer_type: Black Ale
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Strong Ale for the likes of adventurous beer drinkers.  It is dark in color and smokey in flavor.  A really interesting beer that is not only hoppy but thick like a stout and with hints of charred smokey piece of wood.  I really enjoyed the complexity of this Ale, and if I ever see it on tap again, its a guaranteed purchase.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-05-24-Literary-Goodness.jpg
+thumb: 2013-05-24-Literary-Goodness_thumb.jpg
+
+author: Chad Lillquist
+title: Literary Goodness
+sub_title: Its nice being a Renegade.
+blurb: Named after a banned book, a nod to another Renegade, this beer is delicious.
+
+tags: ["Ale", "Hoppy", "Malty", "Strong"]
+rating: 4
+
+brewery: Renegade Brewing Company
+beer_name: The Scarlet Letter
+beer_abv: ...
+beer_ibus: ...
+beer_type: Red Ale
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p This beer is an exclusive brew for the new restaurant opened by Renegade recently.  Since I am fan of pretty much 90% of their beers, I had to go check out the new digs.  I have to say, the decor was nice, the food looked amazing, and the beer is outstanding!  With slight theme of having banned books used in their daily operations, this restaurant nods to other Renegades, but from the literary world.  The beer itself is a Red Ale, I believe it was mentioned to be an European Red Ale.  Renegade is hoppy beer making crew, and I am not super familiar with European beers, but I bet they don't have beers this hoppy.  I loved this beer, it was a nice balance of hops and malts, all while being over the top strong in flavors.  If I revisit this place, I know what I will be ordering, The Scarlet Letter.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}

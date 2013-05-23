@@ -1,0 +1,55 @@
+---
+layout: post
+run: HamlConverter
+
+image: 2013-06-01-American-Hops-FTW.jpg
+thumb: 2013-06-01-American-Hops-FTW_thumb.jpg
+
+author: Chad Lillquist
+title: American Hops FTW
+sub_title: Oh beautiful..
+blurb: This beer was brewed with all American hops and I salute thee!
+
+tags: ["Ale", "Red", "Imperial"]
+rating: 4
+
+brewery: Grand Teton Brewing
+beer_name: Pursuit of Hoppiness 
+beer_abv: 8.5%
+beer_ibus: 100
+beer_type: Imperial Red Ale
+---
+
+%img{:src => '/images/{{page.image}}', :class => 'post_image', :alt => '{{page.title}}'}
+.post_stats
+	{% include post_ratings.haml %}
+	.statsRow
+		%p Brewery:
+		%h3 {{page.brewery}}
+	.statsRow
+		%p Name:
+		%h3 {{page.beer_name}}
+	.statsRow
+		%p Type:
+		%h3 {{page.beer_type}}
+	.statsRow
+		%p ABV:
+		%h3 {{page.beer_abv}}
+	.statsRow
+		%p IBUs:
+		%h3 {{page.beer_ibus}}
+.clear
+
+.post_body
+	%h1 {{page.title}}
+	%h2 {{page.sub_title}}
+	%p.noIndent Author: {{page.author}}
+	
+	%p Um.. Yum! This beer is a fantastic ale.  Strong and hoppy, just how I like it.  This is one of the beers that was on tap at a local pizza shop.  A tap list to make anyone drool if I may say so.  The color is beautiful red amber and I remember it having a really nice head poured with it. Excellent beer all around.
+
+.tags
+	Tags: 
+	{% for tag in page.tags %}
+	%a{:id => "tag", :data => "", :href => "find.html?this={{tag}}"}
+		{{tag}}
+	{% endfor %}
