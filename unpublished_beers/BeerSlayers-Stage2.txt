@@ -1,0 +1,11 @@
+Search box
+Show more button
+half ratings
+beer map of breweries
+side bar menu re-design
+rating in smallest version of the site
+all beers needs small layout attention
+same with search
+a bit more padding on article view
+clean up html and semantics
+affiliate
